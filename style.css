@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
 *{
     padding: 0px;
     margin: 0px;
@@ -44,8 +45,18 @@
 }
 #scoreBox{
     position: absolute;
-    top:9px;
-    right:200px;
+    top:19px;
+    right: 180px;
     font-size: 39px;
     font-weight: bold;
+    font-family: 'New Tegomin', serif;
+}
+#HighScoreBox{
+    position: absolute;
+    top: 60px;
+    right: 90px;
+    font-size: 39px;
+    font-weight: bold;
+    font-family: 'New Tegomin', serif;
+    
 }

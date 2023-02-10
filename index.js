@@ -5,7 +5,7 @@ let gameoverSound = new Audio('music/gameover.mp3');
 let moveSound = new Audio('music/move.mp3');
 let musicSound = new Audio('music/music.mp3');
 let lastPaintTime = 0;
-let speed = 10;
+let speed = 5;
 let snakeArr = [
     {x:13, y:15} //It is head of snake
 ]
@@ -52,6 +52,15 @@ function gameEngine(){
     //If you have eaten the food, increment the score and regenerate the food
     if(snakeArr[0].y===food.y && snakeArr[0].x===food.x){
         score+=1;
+
+        //some Space for HighScore Which I add Later
+        if(score>highScoreValue){
+            highScoreValue=score;
+            localStorage.setItem('HiScore', JSON.stringify(highScoreValue)); //in local storage set high-score value
+            HighScoreBox.innerHTML = "HighScore: "+highScoreValue;
+
+        }
+
         scoreBox.innerHTML = "Score: "+ score;
         foodSound.play();
         snakeArr.unshift({x: snakeArr[0].x + inputDir.x, y: snakeArr[0].y + inputDir.y})// snakeArr[0].x = Adding head to the snake body && inputDir.x = in the current direction
@@ -100,6 +109,14 @@ function gameEngine(){
 
 
 //Main logic starts here
+let HiScore = localStorage.getItem('HiScore');
+if(HiScore === null){
+    highScoreValue = 0;
+    localStorage.setItem('HiScore', JSON.stringify(highScoreValue));
+}else{
+    highScoreValue = JSON.parse(HiScore);
+    HighScoreBox.innerHTML = "HighScore: "+HiScore;
+}
 window.requestAnimationFrame(main); //we can also use selfInterval() method for repeated of func for x milseconds (but window.requestAnimationFrame(main); How? check on StackOverFlow)
 
 window.addEventListener('keydown',e=>{ //keydown = press any key
