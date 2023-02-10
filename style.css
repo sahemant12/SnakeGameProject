@@ -1,0 +1,31 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.body{
+    background: url(img/bg.jpg);
+    min-height: 100vh; /* if min-height is 50vh then it will show only 50% height of display */
+    background-size: 100vw 100vh; /* for perfect fitting of image */
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.board{
+    background: linear-gradient(rgb(243, 248, 142), #d8e97b);
+    width: 90vmin; /* b/w vh and vw(minimum will be vmin and maxm will be vmax) */
+    height:92vmin;
+    border: 2px solid rgb(247, 236, 79);
+    margin: 20px 100px 0 0;
+    display:grid;
+    grid-template-rows: repeat(15,1fr); /* 15rows and 15cols grid */ 
+    grid-template-columns: repeat(15,1fr);
+}
+
+.head{
+    background-color: red;
+}
+.food{
+    background-color: green;
+}
