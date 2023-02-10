@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap');
 *{
     padding: 0px;
     margin: 0px;
@@ -12,20 +13,39 @@
     text-align: center;
 }
 
-.board{
+#board{
     background: linear-gradient(rgb(243, 248, 142), #d8e97b);
     width: 90vmin; /* b/w vh and vw(minimum will be vmin and maxm will be vmax) */
     height:92vmin;
     border: 2px solid rgb(247, 236, 79);
     margin: 20px 100px 0 0;
     display:grid;
-    grid-template-rows: repeat(15,1fr); /* 15rows and 15cols grid */ 
-    grid-template-columns: repeat(15,1fr);
+    grid-template-rows: repeat(25,1fr); /* 15rows and 15cols grid */ 
+    grid-template-columns: repeat(25,1fr);
 }
 
 .head{
     background-color: red;
+    border: .25vmin solid black;
+    border-radius: 4px;
+    transform: scale(1.01); /* increase the size of snake */
+    
+}
+.snake{
+    background-color: purple;
+    border: .25vmin solid white;
+    border-radius: 4px;
+
 }
 .food{
-    background-color: green;
+    background:linear-gradient(rgb(227, 18, 213),yellow);
+    border: .25vmin solid green;
+    border-radius: 8px;
+}
+#scoreBox{
+    position: absolute;
+    top:9px;
+    right:200px;
+    font-size: 39px;
+    font-weight: bold;
 }

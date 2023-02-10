@@ -1,0 +1,10 @@
+//forEach() loop
+The forEach() method calls a function for each element in an array.
+The forEach() method is not executed for empty elements.
+ syntax: array.forEach(function(currentValue, index, arr), thisValue { })
+ currentValue is compulsary, rest are optional
+
+
+ //.classList
+ The classList property returns the CSS classnames of an element.
+ It add multiple classes to the an element.(Remove also along with other properties)
